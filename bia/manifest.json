@@ -1,0 +1,21 @@
+{
+    "name": "PetEmergency",
+    "short_name": "PetEmergency",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#4e73df",
+    "description": "Plataforma de emergências veterinárias 24 horas",
+    "icons": [
+      {
+        "src": "assets/icons/icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "assets/icons/icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ]
+  }

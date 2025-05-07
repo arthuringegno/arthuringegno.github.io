@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetEmergency - Assistência Veterinária 24h</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="assets/icons/paw-solid.svg" type="image/svg+xml">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" class="logo">
+                <i class="fas fa-paw"></i> PetEmergency
+            </a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-links active">Início</a></li>
+                <li><a href="#clinicas" class="nav-links">Clínicas 24h</a></li>
+                <li><a href="#socorros" class="nav-links">Primeiros Socorros</a></li>
+                <li><a href="#emergencia" class="nav-links">Emergência</a></li>
+                <li><a href="#veterinarios" class="nav-links">Fale com um Vet</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>Emergência Veterinária 24 Horas</h1>
+                <p>Encontre ajuda imediata para seu pet quando mais precisar</p>
+                <div class="hero-buttons">
+                    <button class="btn emergency-btn" id="emergencyBtn">
+                        <i class="fas fa-bell"></i> EMERGÊNCIA
+                    </button>
+                    <button class="btn secondary-btn" id="findClinicBtn">
+                        <i class="fas fa-map-marker-alt"></i> Encontrar Clínica
+                    </button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/dog-hero.png" alt="Cachorro sendo cuidado por veterinário">
+            </div>
+        </div>
+    </section>
+
+    <!-- Assistente Virtual -->
+    <section class="assistant-section">
+        <div class="assistant-container">
+            <h2>Assistente Virtual de Emergência</h2>
+            <p>Descreva o problema do seu pet para receber orientações imediatas</p>
+            
+            <div class="assistant-box">
+                <div class="chat-container" id="chatContainer">
+                    <div class="chat-message bot-message">
+                        <p>Olá! Sou o Dr. Bot, seu assistente virtual. Como posso ajudar seu pet hoje?</p>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <textarea id="userInput" placeholder="Descreva o problema do seu pet..."></textarea>
+                    <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+                </div>
+                
+                <div class="quick-actions">
+                    <button class="quick-btn" data-issue="envenenamento">Envenenamento</button>
+                    <button class="quick-btn" data-issue="fratura">Fratura</button>
+                    <button class="quick-btn" data-issue="convulsao">Convulsão</button>
+                    <button class="quick-btn" data-issue="dificuldade-respirar">Dificuldade para respirar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section class="services-section">
+        <div class="services-container">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Mapa de Clínicas</h3>
+                    <p>Localize a clínica veterinária 24h mais próxima da sua localização</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <h3>Primeiros Socorros</h3>
+                    <p>Guias passo a passo para emergências comuns em pets</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Consulta Rápida</h3>
+                    <p>Converse com um veterinário em tempo real via chat ou vídeo</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3>Alerta de Emergência</h3>
+                    <p>Notifique clínicas próximas sobre sua emergência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa de Clínicas (Seção simplificada) -->
+    <section class="map-section" id="clinicas">
+        <div class="map-container">
+            <h2>Clínicas Veterinárias 24h</h2>
+            <div class="map-wrapper">
+                <div id="map" class="map-placeholder">
+                    <!-- Mapa será carregado via JS -->
+                    <p>Carregando mapa de clínicas próximas...</p>
+                </div>
+                <div class="clinics-list" id="clinicsList">
+                    <!-- Lista de clínicas será carregada via JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Primeiros Socorros (Seção simplificada) -->
+    <section class="first-aid-section" id="socorros">
+        <div class="first-aid-container">
+            <h2>Guia de Primeiros Socorros</h2>
+            <div class="first-aid-grid">
+                <!-- Itens serão carregados via JS -->
+            </div>
+            <button class="btn view-all-btn" id="viewAllGuideBtn">Ver Guia Completo</button>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="#"><i class="fas fa-paw"></i> PetEmergency</a>
+                <p>Sua plataforma de emergência veterinária 24 horas</p>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#">Mapa de Clínicas</a></li>
+                        <li><a href="#">Primeiros Socorros</a></li>
+                        <li><a href="#">Chat com Veterinário</a></li>
+                        <li><a href="#">Emergência</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Informações</h4>
+                    <ul>
+                        <li><a href="#">Sobre Nós</a></li>
+                        <li><a href="#">Parceiros</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contato</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> (11) 98765-4321</li>
+                        <li><i class="fas fa-envelope"></i> contato@petemergency.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 PetEmergency. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal de Emergência -->
+    <div class="emergency-modal" id="emergencyModal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2><i class="fas fa-exclamation-triangle"></i> EMERGÊNCIA VETERINÁRIA</h2>
+            <p>Seu pet está em uma situação de emergência? Siga estes passos:</p>
+            
+            <div class="emergency-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Mantenha a calma</h3>
+                        <p>Seu pet pode sentir seu nervosismo. Respire fundo e aja com cuidado.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Proteja seu pet e você</h3>
+                        <p>Animais com dor podem morder. Use uma toalha para manusear com segurança.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Localize a clínica mais próxima</h3>
+                        <button class="btn find-clinic-btn" id="modalFindClinicBtn">
+                            <i class="fas fa-map-marker-alt"></i> Encontrar Clínica Agora
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Ligue para a clínica</h3>
+                        <p>Informe que está a caminho e descreva a situação.</p>
+                        <button class="btn call-btn" id="callVetBtn">
+                            <i class="fas fa-phone"></i> Chamar Veterinário
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="emergency-actions">
+                <button class="btn chat-vet-btn" id="chatVetBtn">
+                    <i class="fas fa-comment-medical"></i> Chat com Veterinário
+                </button>
+                <button class="btn first-aid-btn" id="firstAidBtn">
+                    <i class="fas fa-first-aid"></i> Primeiros Socorros
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <a href="https://wa.me/5511987654321" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="script.js"></script>
+    <!-- API do Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>]
